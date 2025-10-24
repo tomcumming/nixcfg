@@ -1,0 +1,3 @@
+[user]
+    name = Tom Cumming
+    email = mail@tomcumming.co.uk
