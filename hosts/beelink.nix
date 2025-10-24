@@ -14,6 +14,13 @@
   networking.networkmanager.enable = true;
 
   services.fwupd.enable = true;
+  services.openssh.enable = true;
+  services.tailscale.enable = true;
+
+  services.xserver.xkb = {
+    layout = "gb";
+    variant = "";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -34,19 +41,12 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
-
   # Configure console keymap
   console.keyMap = "uk";
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [ ];
-
-  services.openssh.enable = true;
 
   system.stateVersion = "25.05";
   nix.settings.experimental-features = [
@@ -100,7 +100,7 @@
   system.activationScripts.copyConfig = ''
     mkdir -p /home/tommo/.config/git
     cp ${./beelink/config/git-config.txt} /home/tommo/.config/git/config
-    
+
     mkdir -p /home/tommo/.config/helix
     cp ${./beelink/config/helix/config.toml} /home/tommo/.config/helix/config.toml
     cp ${./beelink/config/helix/languages.toml} /home/tommo/.config/helix/languages.toml
