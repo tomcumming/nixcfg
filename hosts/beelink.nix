@@ -54,6 +54,8 @@
     "flakes"
   ];
 
+  # User stuff
+
   users.users.tommo = {
     isNormalUser = true;
     description = "Tommo";
@@ -77,6 +79,7 @@
       pkgs.gitui
       pkgs.delta
       pkgs.hexyl
+      pkgs.nix-tree
 
       # Dictionary
       pkgs.aspell
