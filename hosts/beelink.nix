@@ -94,6 +94,7 @@
       pkgs.curl
       pkgs.jq
       pkgs.xz
+      pkgs.tokei
 
       # Terminal Apps
       pkgs.ncdu
