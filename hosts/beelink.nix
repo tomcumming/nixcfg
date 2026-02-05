@@ -13,6 +13,7 @@
 
   networking.networkmanager.enable = true;
 
+  # Network
   services.fwupd.enable = true;
   services.openssh.enable = true;
   services.tailscale.enable = true;
@@ -48,7 +49,7 @@
 
   environment.systemPackages = with pkgs; [ ];
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -87,56 +88,5 @@
       "networkmanager"
       "wheel"
     ];
-    packages = [
-      # Commands
-      pkgs.git
-      pkgs.wget
-      pkgs.curl
-      pkgs.jq
-      pkgs.xz
-      pkgs.tokei
-
-      # Terminal Apps
-      pkgs.ncdu
-      pkgs.htop
-      pkgs.tmux
-      pkgs.helix
-      pkgs.gitui
-      pkgs.delta
-      pkgs.hexyl
-      pkgs.nix-tree
-
-      # Dictionary
-      pkgs.aspell
-      pkgs.aspellDicts.en
-    ];
   };
-
-  programs.bash = {
-    interactiveShellInit = ''
-      if [ "$SHLVL" -le 2 ]; then
-        export PS1='\[\e[94m\]\W \[\e[0m\]$ '
-      else
-        export PS1='\[\e[91m\]\W \[\e[0m\]$ '
-      fi
-
-      export EDITOR=hx
-    '';
-    promptInit = ""; # Don't override my prompt!
-  };
-
-  system.activationScripts.copyConfig = ''
-    mkdir -p /home/tommo/.config/git
-    cp ${./beelink/config/git-config.txt} /home/tommo/.config/git/config
-
-    mkdir -p /home/tommo/.config/helix
-    cp ${./beelink/config/helix/config.toml} /home/tommo/.config/helix/config.toml
-    cp ${./beelink/config/helix/languages.toml} /home/tommo/.config/helix/languages.toml
-
-    mkdir -p /home/tommo/.config/tmux
-    cp ${./beelink/config/tmux.conf} /home/tommo/.config/tmux/tmux.conf
-
-    mkdir -p /home/tommo/.config/ncdu
-    cp ${./beelink/config/ncdu.txt} /home/tommo/.config/ncdu/config
-  '';
 }
