@@ -55,6 +55,9 @@
     "flakes"
   ];
 
+  users.users.tommo = import ./users/tommo/system.nix;
+  users.users.robot = import ./users/robot/system.nix;
+
   # # Steam junk
   # users.users.steam = {
   #   isNormalUser = true;
@@ -80,13 +83,4 @@
   # };
 
   # User stuff
-
-  users.users.tommo = {
-    isNormalUser = true;
-    description = "Tommo";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-  };
 }
