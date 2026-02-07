@@ -1,5 +1,5 @@
 {
-  home.username = "robot";
-  home.homeDirectory = "/home/robot";
-  home.stateVersion = "25.11";
+  isNormalUser = true;
+  description = "Robot";
+  extraGroups = [ ];
 }

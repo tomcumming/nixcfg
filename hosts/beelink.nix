@@ -47,7 +47,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = [ pkgs.bindfs ];
 
   system.stateVersion = "25.11";
   nix.settings.experimental-features = [
@@ -55,8 +55,15 @@
     "flakes"
   ];
 
-  users.users.tommo = import ./users/tommo/system.nix;
-  users.users.robot = import ./users/robot/system.nix;
+  users.users.tommo = import ../users/tommo/system.nix;
+
+  # Robot account
+  users.users.robot = import ../users/robot/system.nix;
+  fileSystems."/home/tommo/robot-home" = {
+    device = "/home/robot";
+    fsType = "fuse.bindfs";
+    options = [ "map=robot/tommo" ];
+  };
 
   # # Steam junk
   # users.users.steam = {

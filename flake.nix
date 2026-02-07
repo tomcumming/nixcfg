@@ -24,6 +24,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.tommo = import ./users/tommo/home.nix;
+            home-manager.users.robot = import ./users/robot/home.nix;
           }
         ];
       };
