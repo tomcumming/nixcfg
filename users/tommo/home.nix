@@ -43,6 +43,9 @@
     sessionVariables = {
       EDITOR = "hx";
     };
+    shellAliases = {
+      hh = "history -a && $EDITOR ~/.bash_history";
+    };
   };
 
   xdg.configFile = {
