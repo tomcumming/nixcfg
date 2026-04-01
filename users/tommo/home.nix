@@ -15,6 +15,7 @@
     pkgs.xz
     pkgs.tokei
     pkgs.bubblewrap
+    pkgs.bat
 
     # Terminal Apps
     pkgs.ncdu
