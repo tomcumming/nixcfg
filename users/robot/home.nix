@@ -1,4 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, unixpkgs, ... }:
+let
+  upkgs = import unixpkgs {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+  };
+in
 {
 
   home.username = "robot";
@@ -19,8 +25,9 @@
     pkgs.tmux
     pkgs.delta
     pkgs.hexyl
-    pkgs.claude-code
+    upkgs.claude-code
     pkgs.opencode
+    pkgs.gh
 
     # Dictionary
     pkgs.aspell

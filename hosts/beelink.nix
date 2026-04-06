@@ -23,6 +23,9 @@
     variant = "";
   };
 
+  # Graphics
+  hardware.graphics.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/London";
 
