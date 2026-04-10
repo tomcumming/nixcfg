@@ -13,21 +13,17 @@ in
 
   home.packages = [
     # Commands
+    pkgs.curl
     pkgs.file
     pkgs.git
-    pkgs.wget
-    pkgs.curl
     pkgs.jq
+    pkgs.wget
     pkgs.xz
 
     # Terminal Apps
-    pkgs.htop
-    pkgs.tmux
-    pkgs.delta
-    pkgs.hexyl
-    upkgs.claude-code
-    pkgs.opencode
     pkgs.gh
+    pkgs.opencode
+    upkgs.claude-code
 
     # Dictionary
     pkgs.aspell

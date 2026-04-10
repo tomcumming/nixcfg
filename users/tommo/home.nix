@@ -6,25 +6,25 @@
 
   home.packages = [
     # Commands
+    pkgs.bat
+    pkgs.bubblewrap
+    pkgs.curl
     pkgs.file
     pkgs.git
-    pkgs.wget
-    pkgs.curl
     pkgs.jq
-    pkgs.xz
     pkgs.tokei
-    pkgs.bubblewrap
-    pkgs.bat
+    pkgs.wget
+    pkgs.xz
 
     # Terminal Apps
-    pkgs.ncdu
-    pkgs.htop
-    pkgs.tmux
-    pkgs.helix
-    pkgs.gitui
     pkgs.delta
+    pkgs.gitui
+    pkgs.helix
     pkgs.hexyl
+    pkgs.htop
+    pkgs.ncdu
     pkgs.nix-tree
+    pkgs.tmux
 
     # Dictionary
     pkgs.aspell
