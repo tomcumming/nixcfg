@@ -30,6 +30,7 @@
             };
             home-manager.users.tommo = import ./users/tommo/home.nix;
             home-manager.users.robot = import ./users/robot/home.nix;
+            home-manager.users.steam = import ./users/steam/home.nix;
           }
         ];
       };

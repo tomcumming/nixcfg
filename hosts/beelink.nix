@@ -4,6 +4,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./beelink/hardware-configuration.nix
+    ../users/steam/service.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -68,29 +69,6 @@
     options = [ "map=robot/tommo" ];
   };
 
-  # # Steam junk
-  # users.users.steam = {
-  #   isNormalUser = true;
-  #   description = "Steam";
-  #   extraGroups = [ ];
-  # };
-  # programs.steam.enable = true;
-  # programs.gamescope = {
-  #   enable = true;
-  #   capSysNice = true;
-  # };
-  # programs.steam.gamescopeSession.enable = true; # Integrates with programs.steam
-  # services.xserver.enable = false; # Assuming no other Xserver needed
-  # services.getty.autologinUser = "steam";
-  # services.greetd = {
-  #   enable = true;
-  #   settings = {
-  #     default_session = {
-  #       command = "${pkgs.gamescope}/bin/gamescope -W 1920 -H 1080 -f -e --xwayland-count 2 --hdr-enabled --hdr-itm-enabled -- steam -pipewire-dmabuf -gamepadui > /dev/null 2>&1";
-  #       user = "steam";
-  #     };
-  #   };
-  # };
-
-  # User stuff
+  # Steam
+  users.users.steam = import ../users/steam/system.nix;
 }
