@@ -24,6 +24,7 @@ in
     pkgs.gh
     pkgs.opencode
     upkgs.claude-code
+    upkgs.codex
 
     # Dictionary
     pkgs.aspell

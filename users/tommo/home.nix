@@ -42,7 +42,7 @@
     '';
     sessionVariables = {
       EDITOR = "hx";
-      NIX_SHELL_PRESERVE_PROMPT=1;
+      NIX_SHELL_PRESERVE_PROMPT = 1;
     };
     shellAliases = {
       hh = "history -a && $EDITOR ~/.bash_history";
