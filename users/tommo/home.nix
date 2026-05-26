@@ -34,11 +34,14 @@
   programs.bash = {
     enable = true;
     initExtra = ''
-      if [ "$SHLVL" -le 2 ]; then
-        export PS1='\[\e[94m\]\W \[\e[0m\]$ '
-      else
-        export PS1='\[\e[91m\]\W \[\e[0m\]$ '
-      fi
+      __set_prompt() {
+        if [ -n "$IN_NIX_SHELL" ]; then
+          PS1='\[\e[91m\]\W \[\e[0m\]$ '
+        else
+          PS1='\[\e[94m\]\W \[\e[0m\]$ '
+        fi
+      }
+      PROMPT_COMMAND=__set_prompt
     '';
     sessionVariables = {
       EDITOR = "hx";
