@@ -11,7 +11,6 @@
   };
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
     args = [
       "-W"
       "1920"
@@ -29,4 +28,5 @@
       user = "steam";
     };
   };
+  services.seatd.enable = true;
 }

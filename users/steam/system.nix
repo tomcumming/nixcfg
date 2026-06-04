@@ -1,6 +1,11 @@
 {
   isNormalUser = true;
   description = "Steam";
-  extraGroups = [ ];
+  extraGroups = [
+    "video"
+    "render"
+    "input"
+    "seat"
+  ];
   home = "/mnt/secondary/steam";
 }
