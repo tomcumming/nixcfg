@@ -10,15 +10,20 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "beelink"; # Define your hostname.
-
-  networking.networkmanager.enable = true;
-
   # Network
+  networking.hostName = "beelink";
+  networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    4096
+    8080
+  ];
+
+  # Network Services
   services.fwupd.enable = true;
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
+  # Keyboard
   services.xserver.xkb = {
     layout = "gb";
     variant = "";
