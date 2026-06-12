@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, helixpkgs, ... }:
 {
   home.username = "tommo";
   home.homeDirectory = "/home/tommo";
@@ -16,10 +16,12 @@
     pkgs.wget
     pkgs.xz
 
+    # Helix
+    helixpkgs.packages.${pkgs.system}.default
+
     # Terminal Apps
     pkgs.delta
     pkgs.gitui
-    pkgs.helix
     pkgs.hexyl
     pkgs.htop
     pkgs.ncdu

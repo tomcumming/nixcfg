@@ -3,8 +3,9 @@ haskell-language-server = { command = "haskell-language-server-wrapper", args = 
 
 [language-server.typescript-language-server]
 command = "npm" 
-args = ["exec", "typescript-language-server", "--", "--stdio"]
+args = ["exec", "tsgo", "--", "--lsp", "--stdio"]
 config.hostInfo = "helix"
+# roots = ["tsconfig.json", "package.json"]
 
 [language-server.purescript-language-server]
 command = "npm" 

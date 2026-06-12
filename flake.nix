@@ -6,6 +6,11 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helixpkgs = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -14,6 +19,7 @@
       nixpkgs,
       unixpkgs,
       home-manager,
+      helixpkgs,
       ...
     }@inputs:
     {
@@ -27,6 +33,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {
               unixpkgs = unixpkgs;
+              helixpkgs = helixpkgs;
             };
             home-manager.users.tommo = import ./users/tommo/home.nix;
             home-manager.users.robot = import ./users/robot/home.nix;
