@@ -3,6 +3,7 @@ theme = "onedark"
 [editor]
 true-color = true
 rulers = [80]
+end-of-line-diagnostics = "disable"
 
 [editor.cursor-shape]
 insert = "bar"
