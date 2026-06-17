@@ -4,6 +4,7 @@ theme = "onedark"
 true-color = true
 rulers = [80]
 end-of-line-diagnostics = "disable"
+auto-pairs = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,4 +17,3 @@ tab = "all"
 
 [editor.indent-guides]
 render = true
-
