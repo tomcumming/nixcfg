@@ -17,7 +17,7 @@
     pkgs.xz
 
     # Helix
-    helixpkgs.packages.${pkgs.system}.default
+    helixpkgs.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # Terminal Apps
     pkgs.delta
