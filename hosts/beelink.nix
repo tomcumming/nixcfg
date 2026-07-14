@@ -56,8 +56,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = [ pkgs.bindfs ];
-
   system.stateVersion = "26.05";
   nix.settings.experimental-features = [
     "nix-command"
@@ -68,11 +66,12 @@
 
   # Robot account
   users.users.robot = import ../users/robot/system.nix;
-  fileSystems."/home/tommo/robot-home" = {
-    device = "/home/robot";
-    fsType = "fuse.bindfs";
-    options = [ "map=robot/tommo" ];
-  };
+
+  users.groups.shared = { };
+  systemd.tmpfiles.rules = [
+    "d /srv/shared 2775 root shared - -"
+    "a+ /srv/shared - - - - d:g:shared:rwx,g:shared:rwx"
+  ];
 
   # Steam
   users.users.steam = import ../users/steam/system.nix;

@@ -4,5 +4,6 @@
   extraGroups = [
     "networkmanager"
     "wheel"
+    "shared"
   ];
 }

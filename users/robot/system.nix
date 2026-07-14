@@ -1,5 +1,5 @@
 {
   isNormalUser = true;
   description = "Robot";
-  extraGroups = [ ];
+  extraGroups = [ "shared" ];
 }
