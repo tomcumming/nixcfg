@@ -23,6 +23,7 @@
     pkgs.delta
     pkgs.gitui
     pkgs.hexyl
+    pkgs.htop
     pkgs.bottom
     pkgs.ncdu
     pkgs.nix-tree
