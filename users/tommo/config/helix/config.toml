@@ -6,6 +6,9 @@ rulers = [80]
 end-of-line-diagnostics = "disable"
 auto-pairs = false
 
+[editor.inline-diagnostics]
+cursor-line = "disable"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
