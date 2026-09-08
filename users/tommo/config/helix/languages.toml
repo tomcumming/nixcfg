@@ -3,7 +3,7 @@ haskell-language-server = { command = "haskell-language-server-wrapper", args = 
 
 [language-server.typescript-language-server]
 command = "npm" 
-args = ["exec", "tsgo", "--", "--lsp", "--stdio"]
+args = ["exec", "tsc", "--", "--lsp", "--stdio"]
 config.hostInfo = "helix"
 
 [language-server.purescript-language-server]
