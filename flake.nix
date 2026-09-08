@@ -8,7 +8,7 @@
     };
 
     helixpkgs = {
-      url = "github:helix-editor/helix";
+      url = "github:helix-editor/helix/079a789e8cb08ead67f19e1971a1b7438b37354b";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
