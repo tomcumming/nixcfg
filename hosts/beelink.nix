@@ -4,7 +4,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./beelink/hardware-configuration.nix
-    ../users/steam/service.nix
+    ./beelink/tv-session.nix
+    ../users/steam/steam-app.nix
+    ../users/tommo/niri.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
