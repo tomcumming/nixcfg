@@ -9,6 +9,8 @@
     ../users/tommo/niri.nix
   ];
 
+  nix.package = pkgs.nixVersions.latest;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
