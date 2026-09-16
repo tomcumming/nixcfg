@@ -27,15 +27,4 @@ in
       user = "greeter";
     };
   };
-  security.pam.services.greetd.rules.auth.steamPasswordless = {
-    order = config.security.pam.services.greetd.rules.auth.unix.order - 10;
-    control = "sufficient";
-    modulePath = "${config.security.pam.package}/lib/security/pam_succeed_if.so";
-    args = [
-      "quiet"
-      "user"
-      "="
-      "steam"
-    ];
-  };
 }
