@@ -68,9 +68,6 @@
 
   users.users.tommo = import ../users/tommo/system.nix;
 
-  # Robot account
-  users.users.robot = import ../users/robot/system.nix;
-
   users.groups.shared = { };
   systemd.tmpfiles.rules = [
     "d /srv/shared 2775 root shared - -"

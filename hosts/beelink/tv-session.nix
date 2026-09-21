@@ -9,9 +9,6 @@ let
       tommo)
         exec ${pkgs.niri}/bin/niri-session
         ;;
-      robot)
-        exec ${pkgs.bashInteractive}/bin/bash --login
-        ;;
       *)
         exit 1
         ;;
