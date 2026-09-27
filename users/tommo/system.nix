@@ -5,5 +5,6 @@
     "networkmanager"
     "wheel"
     "shared"
+    "kvm"
   ];
 }
