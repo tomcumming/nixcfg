@@ -20,13 +20,14 @@
     helixpkgs.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # Terminal Apps
+    pkgs.bottom
     pkgs.delta
     pkgs.gitui
     pkgs.hexyl
     pkgs.htop
-    pkgs.bottom
     pkgs.ncdu
     pkgs.nix-tree
+    pkgs.podman
     pkgs.tmux
 
     # Dictionary
