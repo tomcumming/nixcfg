@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-    unixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    unixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,6 +10,12 @@
     helixpkgs = {
       url = "github:helix-editor/helix/079a789e8cb08ead67f19e1971a1b7438b37354b";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    agent-sandbox = {
+      url = "path:./packages/agent-sandbox";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-unstable.follows = "unixpkgs";
     };
   };
 
@@ -20,6 +26,7 @@
       unixpkgs,
       home-manager,
       helixpkgs,
+      agent-sandbox,
       ...
     }@inputs:
     {
@@ -34,6 +41,7 @@
             home-manager.extraSpecialArgs = {
               unixpkgs = unixpkgs;
               helixpkgs = helixpkgs;
+              agent-sandbox = agent-sandbox;
             };
             home-manager.users.tommo = import ./users/tommo/home.nix;
             home-manager.users.steam = import ./users/steam/home.nix;

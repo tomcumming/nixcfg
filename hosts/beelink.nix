@@ -27,6 +27,9 @@
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
+  # Containers
+  virtualisation.podman.enable = true;
+
   # Keyboard
   services.xserver.xkb = {
     layout = "gb";

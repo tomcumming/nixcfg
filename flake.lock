@@ -1,5 +1,24 @@
 {
   "nodes": {
+    "agent-sandbox": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-unstable": [
+          "unixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./packages/agent-sandbox",
+        "type": "path"
+      },
+      "original": {
+        "path": "./packages/agent-sandbox",
+        "type": "path"
+      },
+      "parent": []
+    },
     "helixpkgs": {
       "inputs": {
         "nixpkgs": [
@@ -61,6 +80,7 @@
     },
     "root": {
       "inputs": {
+        "agent-sandbox": "agent-sandbox",
         "helixpkgs": "helixpkgs",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
@@ -90,16 +110,16 @@
     },
     "unixpkgs": {
       "locked": {
-        "lastModified": 1789558842,
-        "narHash": "sha256-qKFz1CjjK8wobzjpyhjcX6zhCwpUcttRcEsZdBn+tU8=",
+        "lastModified": 1790822859,
+        "narHash": "sha256-69xHQhAeMAD2wDXO7T2pcOZIF9Sga2W+JkmY2a11Ops=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "41461f1b1c2490802fd85c0419f2f1f82a0194cd",
+        "rev": "c59305bab2065cfecc4944690d9eedbb56f3a9fa",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable-small",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }

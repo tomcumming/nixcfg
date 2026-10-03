@@ -1,4 +1,9 @@
-{ pkgs, helixpkgs, ... }:
+{
+  pkgs,
+  helixpkgs,
+  agent-sandbox,
+  ...
+}:
 {
   home.username = "tommo";
   home.homeDirectory = "/home/tommo";
@@ -20,6 +25,7 @@
     helixpkgs.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # Terminal Apps
+    agent-sandbox.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.bottom
     pkgs.delta
     pkgs.gitui
@@ -27,7 +33,6 @@
     pkgs.htop
     pkgs.ncdu
     pkgs.nix-tree
-    pkgs.podman
     pkgs.tmux
 
     # Dictionary
